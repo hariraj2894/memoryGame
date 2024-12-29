@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.game-container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-bottom: 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 10px;
+    justify-content: center;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #007bff;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: white;
+    transition: transform 0.3s;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card .front {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card .back {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    background-color: #ffffff;
+    color: black;
+}
+
+.card.matched {
+    background-color: #28a745;
+}
+
+@media (max-width: 600px) {
+    .board {
+        grid-template-columns: repeat(4, 80px);
+    }
+
+    .card {
+        width: 80px;
+        height: 80px;
+    }
+}
